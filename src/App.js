@@ -1,27 +1,37 @@
 import React, { Component } from 'react';
-//import logo from './logo.svg';
 
-
+import { MenuItem,Navbar, NavDropdown, Nav, NavItem } from 'react-bootstrap';
 import './App.css';
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
       <div className="App">
-          <header>
-              <nav>
-                  <ul className="ul">
-                      <li>1</li>
-                      <li>2</li>
-                      <li>3</li>
-                      <li>4</li>
-                  </ul>
-              </nav>
-          </header>
+          <Navbar>
+              <Navbar.Header>
+                  <Navbar.Brand>
+                      <a href="">React-Bootstrap</a>
+                  </Navbar.Brand>
+              </Navbar.Header>
+              <Nav>
+                  <NavItem eventKey={1} href="#">
+                      Link
+                  </NavItem>
+                  <NavItem eventKey={2} href="#">
+                      Link
+                  </NavItem>
+                  <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
+                      <MenuItem eventKey={3.1}>Action</MenuItem>
+                      <MenuItem eventKey={3.2}>Another action</MenuItem>
+                      <MenuItem eventKey={3.3}>Something else here</MenuItem>
+                      <MenuItem divider />
+                      <MenuItem eventKey={3.4}>Separated link</MenuItem>
+                  </NavDropdown>
+              </Nav>
+          </Navbar>;
       </div>
     );
   }
 }
 
 
-export default App;
